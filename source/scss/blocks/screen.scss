@@ -290,7 +290,8 @@
 
 .screen--story {
   background-color: $c-dark;
-  background-image: url("../img/slide1.jpg"), url("../img/slide2.jpg"), url("../img/slide3.jpg"), url("../img/slide4.jpg");
+  background-image: url("../img/slide1.jpg"), url("../img/slide2.jpg"),
+    url("../img/slide3.jpg"), url("../img/slide4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -332,6 +333,28 @@
 
     @media (max-width: $tablet) and (orientation: portrait) {
       opacity: 0;
+    }
+  }
+
+  .form {
+    justify-content: flex-end;
+
+    &__button {
+      flex-grow: unset;
+      width: 18rem;
+    }
+
+    &__field {
+      width: 0;
+      opacity: 0;
+      transition: all 300ms ease-in;
+    }
+  }
+
+  &.active {
+    .form__field {
+      width: calc(100% - 21rem);
+      opacity: 1;
     }
   }
 }
